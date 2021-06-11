@@ -1,0 +1,60 @@
+@baseUrl=http://localhost:3000/api
+
+@resourceName=products
+#Categories
+
+# @name getAll
+GET {{baseUrl}}/{{resourceName}}
+
+###
+
+# @name filterProducts
+GET {{baseUrl}}/{{resourceName}}?price_lte=300
+
+###
+
+# @name filterProductsTitle
+GET {{baseUrl}}/{{resourceName}}?name_like=soft
+
+###
+
+# @name pagination
+GET {{baseUrl}}/{{resourceName}}?_page=5&_limit=5
+
+###
+# @name sort
+GET {{baseUrl}}/{{resourceName}}?_sort=createAt&_order=desc
+
+
+###
+# @name addNew
+POST {{baseUrl}}/{{resourceName}}
+Content-Type: application/json
+
+{
+    "name": "hello",
+    "color": "red",
+    "price": 100,
+    "description": "four wheel drive",
+    "thumbnailUrl": "http://placeimg.com/400/400"
+}
+
+###
+
+# @name update
+PATCH {{baseUrl}}/{{resourceName}}/ZcBUDra
+Content-Type: application/json
+
+{
+    "name": "hello word",
+    "color": "green",
+    "price": 10000,
+    "description": "four wheel drive update",
+    "thumbnailUrl": "http://placeimg.com/400/400"
+}
+
+###
+
+# @name remove
+DELETE {{baseUrl}}/{{resourceName}}/aA0u7Gf
+
