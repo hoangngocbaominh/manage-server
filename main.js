@@ -25,22 +25,47 @@ server.use((req, res, next) => {
   next();
 });
 router.render = (req, res) => {
-  const headers = res.getHeaders();
-  const totalCountHeader = headers["x-total-count"];
-  if (req.method === "GET" && totalCountHeader) {
-    const queryParams = queryString.parse(req._parsedUrl.query);
-    console.log(queryParams);
-    const result = {
-      data: res.locals.data,
-      pagination: {
-        _page: Number.parseInt(queryParams._page || 1),
-        _limit: Number.parseInt(queryParams._limit || 10),
-        _totalRows:Number.parseInt(totalCountHeader),
-      },
-    };
-    return res.jsonp(result);
+  const TOKEN =
+    "72kasOjOOLHBHJbJbjkBuhuOJijOJ2IW1212KSASDNJKLJkj9U9HIRDDEdftghjcrft6yt5r56tyggvtfgy";
+  const pathname = req._parsedUrl.pathname;
+  const body = req.body;
+  const authorization = req.headers.authorization;
+  switch (pathname) {
+    case "/auth/login":
+      if (body.username === "admin" && body.password === "12345")
+        res.status(200).jsonp({
+          message: "Đăng nhập thành công",
+          data: { accessToken: TOKEN },
+        });
+      else {
+        res.status(400).jsonp({ error: "Sai tên đăng nhập hoặc mật khẩu" });
+      }
+      break;
+    default:
+      if(authorization === `Bearer ${TOKEN}`){
+      const headers = res.getHeaders();
+      const totalCountHeader = headers["x-total-count"];
+      if (req.method === "GET" && totalCountHeader) {
+        const queryParams = queryString.parse(req._parsedUrl.query);
+        console.log(queryParams);
+        const result = {
+          data: res.locals.data,
+          pagination: {
+            _page: Number.parseInt(queryParams._page || 1),
+            _limit: Number.parseInt(queryParams._limit || 10),
+            _totalRows: Number.parseInt(totalCountHeader),
+          },
+        };
+        return res.jsonp(result);
+      }
+      res.jsonp(res.locals.data);
+    }else{
+      return res.status(401).jsonp({
+        error: "Lỗi xác thực"
+      })
+    }
+      break;
   }
-  res.jsonp(res.locals.data);
 };
 server.use("/api", router);
 const PORT = process.env.PORT || 3000;
