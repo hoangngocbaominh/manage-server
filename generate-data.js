@@ -15,11 +15,13 @@ const randomCategoryList = (n) => {
   if (n <= 0) return [];
   const categoryList = [];
   Array.from(new Array(n)).forEach(() => {
+    const createDate = Date.now();
+    const updateDate = Date.now();
     const category = {
       id: faker.random.uuid(),
       name: faker.commerce.department(),
-      createAt: Date.now(),
-      updateAt: Date.now(),
+      createAt: moment(createDate).format("MMM Do YY"),
+      updateAt: moment(updateDate).format("MMM Do YY"),
     };
     categoryList.push(category);
   });
