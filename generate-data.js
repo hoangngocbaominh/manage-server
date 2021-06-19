@@ -58,7 +58,7 @@ const randomProductList = (categoryList, numberOfProducts) => {
     categories: categoryList,
     products: productList,
     profile: {
-      name: "Po",
+      name: "Minh",
     },
   };
 
