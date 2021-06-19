@@ -53,12 +53,12 @@ const randomProductList = (categoryList, numberOfProducts) => {
 //IFFE
 (() => {
   const categoryList = randomCategoryList(10);
-  const productList = randomProductList(categoryList, 10);
+  const productList = randomProductList(categoryList,10);
   const db = {
     categories: categoryList,
     products: productList,
     profile: {
-      name: "Po ",
+      name: "Po",
     },
   };
 
