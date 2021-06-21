@@ -2,7 +2,7 @@
   "categories": [
     {
       "id": "bdbe4966-b7bd-4bb1-8e34-dbe1d910d4c0",
-      "name": "Jewelery",
+      "name": "Material",
       "createAt": 1624002080514,
       "updateAt": 1624002080514
     },
@@ -14,7 +14,7 @@
     },
     {
       "id": "5b861da0-6eb6-40df-adb3-26f09a3751cf",
-      "name": "Garden",
+      "name": "Food",
       "createAt": 1624002080518,
       "updateAt": 1624002080518
     },
@@ -38,7 +38,7 @@
     },
     {
       "id": "6d3c6967-257e-4390-a700-7067efae2684",
-      "name": "Music",
+      "name": "equipment",
       "createAt": 1624002080525,
       "updateAt": 1624002080525
     },

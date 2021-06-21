@@ -58,3 +58,7 @@ Content-Type: application/json
 # @name remove
 DELETE {{baseUrl}}/{{resourceName}}/aA0u7Gf
 
+###
+# @name get
+GET {{baseUrl}}/{{resourceName}}/29cb9b5d-7f35-472f-95ab-b29b7189e0a8
+
