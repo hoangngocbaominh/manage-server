@@ -1162,33 +1162,6 @@
       "createAt": 1624002080845,
       "updateAt": 1624002080845,
       "thumbnailUrl": "http://placeimg.com/400/400"
-    },
-    {
-      "name": "Sanr pham",
-      "price": "200",
-      "color": "green",
-      "categoryName": "Garden",
-      "createdAt": 1624005903716,
-      "updatedAt": 1624005903716,
-      "id": "oLjtvaw"
-    },
-    {
-      "name": "product",
-      "price": "200",
-      "color": "red",
-      "categoryName": "Baby",
-      "createdAt": 1624008965853,
-      "updatedAt": 1624008965853,
-      "id": "vbruwiL"
-    },
-    {
-      "name": "Sanr pham",
-      "price": "200",
-      "color": "white",
-      "categoryName": "Music",
-      "createdAt": 1624011252090,
-      "updatedAt": 1624011252090,
-      "id": "8aMEIZO"
     }
   ],
   "profile": {
