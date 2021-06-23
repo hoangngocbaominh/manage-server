@@ -1151,17 +1151,6 @@
       "createAt": 1624002080844,
       "updateAt": 1624002080844,
       "thumbnailUrl": "http://placeimg.com/400/400"
-    },
-    {
-      "categoryId": "d73b1c45-e66a-401e-87df-d66050d488c0",
-      "id": "f897fa42-04c6-415f-a140-c94e0ee73e83",
-      "name": "Handcrafted Concrete Shirt",
-      "color": "blue",
-      "price": 562,
-      "description": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-      "createAt": 1624002080845,
-      "updateAt": 1624002080845,
-      "thumbnailUrl": "http://placeimg.com/400/400"
     }
   ],
   "profile": {

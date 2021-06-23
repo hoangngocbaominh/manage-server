@@ -4,8 +4,27 @@ const server = jsonServer.create();
 const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
 
+const TOKEN =
+  "72kasOjOOLHBHJbJbjkBuhuOJijOJ2IW1212KSASDNJKLJkj9U9HIRDDEdftghjcrft6yt5r56tyggvtfgy";
+const authMiddleware = (req, res, next) => {
+  const authorization = req.headers.authorization;
+  const pathname = req._parsedUrl.pathname;
+  console.log(pathname);
+
+  switch (pathname) {
+    case "/api/auth/login":
+      break;
+    default:
+      if (authorization !== `Bearer ${TOKEN}`)
+        return res.status(401).jsonp({
+          error: "Lỗi xác thực",
+        });
+  }
+  next();
+};
 // Set default middlewares (logger, static, cors and no-cache)
 server.use(middlewares);
+server.use(authMiddleware);
 
 // Add custom routes before JSON Server router
 server.get("/echo", (req, res) => {
@@ -25,11 +44,8 @@ server.use((req, res, next) => {
   next();
 });
 router.render = (req, res) => {
-  const TOKEN =
-    "72kasOjOOLHBHJbJbjkBuhuOJijOJ2IW1212KSASDNJKLJkj9U9HIRDDEdftghjcrft6yt5r56tyggvtfgy";
   const pathname = req._parsedUrl.pathname;
   const body = req.body;
-  const authorization = req.headers.authorization;
   switch (pathname) {
     case "/auth/login":
       if (body.username === "admin" && body.password === "12345")
@@ -42,7 +58,6 @@ router.render = (req, res) => {
       }
       break;
     default:
-      if(authorization === `Bearer ${TOKEN}`){
       const headers = res.getHeaders();
       const totalCountHeader = headers["x-total-count"];
       if (req.method === "GET" && totalCountHeader) {
@@ -59,11 +74,6 @@ router.render = (req, res) => {
         return res.jsonp(result);
       }
       res.jsonp(res.locals.data);
-    }else{
-      return res.status(401).jsonp({
-        error: "Lỗi xác thực"
-      })
-    }
       break;
   }
 };
@@ -72,5 +82,3 @@ const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log("JSON Server is running");
 });
-
-// npm run generate-data && 
