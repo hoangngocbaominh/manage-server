@@ -39,6 +39,7 @@ const randomProductList = (categoryList, numberOfProducts) => {
         color: faker.commerce.color(),
         price: Number.parseFloat(faker.commerce.price()),
         description: faker.commerce.productDescription(),
+        status: "Hoạt động",
         createAt: Date.now(),
         updateAt: Date.now(),
         thumbnailUrl: [faker.image.imageUrl(400, 400)],
