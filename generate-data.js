@@ -10,7 +10,6 @@ console.log(faker.random.uuid());
 console.log(faker.image.imageUrl());
 console.log(faker.name.findName());
 
-
 const randomCategoryList = (n) => {
   if (n <= 0) return [];
   const categoryList = [];
@@ -43,18 +42,22 @@ const randomProductList = (categoryList, numberOfProducts) => {
         createAt: Date.now(),
         updateAt: Date.now(),
         thumbnailMainUrl: faker.image.imageUrl(400, 400),
-        thumbnailUrl: [faker.image.imageUrl(400, 400)],
-      };  
+        thumbnailUrl: [
+          faker.image.imageUrl(400, 400),
+          faker.image.imageUrl(400, 400),
+          faker.image.imageUrl(400, 400),
+          faker.image.imageUrl(400, 400),
+        ],
+      };
       productList.push(product);
     });
-    
   }
   return productList;
 };
 //IFFE
 (() => {
   const categoryList = randomCategoryList(10);
-  const productList = randomProductList(categoryList,10);
+  const productList = randomProductList(categoryList, 10);
   const db = {
     categories: categoryList,
     products: productList,
