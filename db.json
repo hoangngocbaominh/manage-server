@@ -73,9 +73,9 @@
       "createAt": 1624788998709,
       "updateAt": 1624788998709,
       "thumbnailMainUrl": "http://placeimg.com/400/400",
-      "thumbnailUrl": [
-        "http://placeimg.com/400/400"
-      ]
+      "thumbnailUrl": [],
+      "categoryName": "Beauty",
+      "updatedAt": 1625817442664
     },
     {
       "categoryId": "1417cee9-0e10-4972-b54e-c9994c792c5b",

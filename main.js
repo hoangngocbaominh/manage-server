@@ -77,6 +77,7 @@ router.render = (req, res) => {
       break;
   }
 };
+
 server.use("/api", router);
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
