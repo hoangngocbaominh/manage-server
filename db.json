@@ -68,14 +68,16 @@
       "name": "Small Steel Hat",
       "color": "gold",
       "price": 606,
-      "description": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
+      "description": "Hello word",
       "status": true,
       "createAt": 1624788998709,
       "updateAt": 1624788998709,
       "thumbnailMainUrl": "http://placeimg.com/400/400",
-      "thumbnailUrl": [],
+      "thumbnailUrl": [
+        
+      ],
       "categoryName": "Beauty",
-      "updatedAt": 1625817442664
+      "updatedAt": 1626257109277
     },
     {
       "categoryId": "1417cee9-0e10-4972-b54e-c9994c792c5b",
@@ -83,14 +85,16 @@
       "name": "Practical Wooden Computer",
       "color": "magenta",
       "price": 903,
-      "description": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
       "status": true,
       "createAt": 1624788998710,
       "updateAt": 1624788998710,
       "thumbnailMainUrl": "http://placeimg.com/400/400",
       "thumbnailUrl": [
         "http://placeimg.com/400/400"
-      ]
+      ],
+      "categoryName": "Beauty",
+      "updatedAt": 1626186166903,
+      "description": ""
     },
     {
       "categoryId": "1417cee9-0e10-4972-b54e-c9994c792c5b",
