@@ -48,7 +48,7 @@ router.render = (req, res) => {
   const body = req.body;
   switch (pathname) {
     case "/auth/login":
-      if (body.username === "admin" && body.password === "12345")
+      if (body.username === "admin" && body.password === "12345a@")
         res.status(200).jsonp({
           message: "Đăng nhập thành công",
           data: { accessToken: TOKEN },
@@ -83,3 +83,4 @@ const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log("JSON Server is running");
 });
+
